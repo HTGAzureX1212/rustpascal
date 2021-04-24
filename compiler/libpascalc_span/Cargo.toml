@@ -1,0 +1,11 @@
+[package]
+name = "libpascalc_span"
+authors = ["HTGAzureX1212"]
+license = "Apache-2.0"
+version = "0.1.0"
+edition = "2018"
+description = """
+Source positions as well as some helper functions implemented for the RustPascal compiler.
+"""
+
+[dependencies]
