@@ -1,0 +1,12 @@
+[package]
+name = "libpascalc_lexer"
+authors = ["HTGAzureX1212"]
+license = "Apache-2.0"
+version = "0.1.0"
+edition = "2018"
+description = """
+An implementation of a lexical analysis for the RustPascal compiler.
+"""
+
+[dependencies]
+expect-test = "1.1.0"
