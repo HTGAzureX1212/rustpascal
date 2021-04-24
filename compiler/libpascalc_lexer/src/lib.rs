@@ -2,8 +2,6 @@
 //!
 //! An implementation of a lexical analysis for the RustPascal compiler.
 
-#![feature(control_flow_enum)]
-
 use std::iter;
 
 mod cursor;
@@ -137,6 +135,9 @@ impl<'a> cursor::Cursor<'a> {
                 let terminated = self.character_string();
 
                 LexemeType::Literal { r#type: LiteralType::String { terminated } }
+            }
+            '{' => {
+                self.block_comment()
             }
             _ => LexemeType::Unknown
         };
