@@ -55,8 +55,27 @@ fn comments_test() {
 #[test]
 fn integers_test() {
     let source = include_str!("../../tests/lexer/lexer_integers_test.pas");
-
+    
     let expect = expect![[r"
+    Lexeme { type: Literal { type: Integer { base: Base10, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Literal { type: Integer { base: Base8, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Literal { type: Integer { base: Base2, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Minus, len: 1 }
+    Lexeme { type: Literal { type: Integer { base: Base10, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Minus, len: 1 }
+    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Minus, len: 1 }
+    Lexeme { type: Literal { type: Integer { base: Base8, empty: false } }, len: 15 }
+    Lexeme { type: Whitespace, len: 2 }
+    Lexeme { type: Minus, len: 1 }
+    Lexeme { type: Literal { type: Integer { base: Base2, empty: false } }, len: 15 }
     "]];
     let actual = lexical_analyze(source).map(|lexeme| {
         format!("{:?}\n", lexeme)
