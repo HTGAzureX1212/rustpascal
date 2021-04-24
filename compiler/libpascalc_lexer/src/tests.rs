@@ -15,7 +15,6 @@ fn hello_world_test() {
     Lexeme { type: Identifier, len: 5 }
     Lexeme { type: Whitespace, len: 6 }
     Lexeme { type: Identifier, len: 7 }
-    Lexeme { type: Whitespace, len: 1 }
     Lexeme { type: LeftRound, len: 1 }
     Lexeme { type: Literal { type: String { terminated: true } }, len: 14 }
     Lexeme { type: RightRound, len: 1 }
