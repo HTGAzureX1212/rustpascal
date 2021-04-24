@@ -3,6 +3,7 @@
 //! Source positions as well as some helper functions implemented for the RustPascal compiler.
 
 pub mod position;
+pub mod span_encoding;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, Ord, PartialEq, PartialOrd)]
 pub struct SpanData {
