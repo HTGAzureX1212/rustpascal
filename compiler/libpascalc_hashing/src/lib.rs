@@ -54,26 +54,26 @@ impl Hasher for PascalcHasher {
 
         let mut hash = FxHasher { hash: self.hash };
         assert!(size_of::<usize>() <= 8);
-        
+
         while bytes.len() >= size_of::<usize>() {
             hash.add_to_hash(read_usize(bytes) as usize);
             bytes = &bytes[size_of::<usize>()..];
         }
-        
+
         if (size_of::<usize>() > 4) && (bytes.len() >= 4) {
             hash.add_to_hash(u32::from_ne_bytes(bytes[..4].try_into().unwrap()) as usize);
             bytes = &bytes[4..];
         }
-        
+
         if (size_of::<usize>() > 2) && bytes.len() >= 2 {
             hash.add_to_hash(u16::from_ne_bytes(bytes[..2].try_into().unwrap()) as usize);
             bytes = &bytes[2..];
         }
-        
+
         if (size_of::<usize>() > 1) && bytes.len() >= 1 {
             hash.add_to_hash(bytes[0] as usize);
         }
-        
+
         self.hash = hash.hash;
     }
 
@@ -110,3 +110,6 @@ impl Hasher for PascalcHasher {
         self.add_to_hash(value);
     }
 }
+
+pub type PascalcHashMap<K, V> = HashMap<K, V, BuildHasherDefault<PascalcHasher>>;
+pub type PascalcHashSet<V> = HashSet<V, BuildHasherDefault<PascalcHasher>>;
