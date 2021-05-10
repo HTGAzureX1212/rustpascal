@@ -66,35 +66,23 @@ fn integers_test() {
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base10, empty_expo: false } }, len: 17 }
     Lexeme { type: Whitespace, len: 2 }
-    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 17 }
-    Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base8, empty_expo: false } }, len: 17 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base2, empty_expo: false } }, len: 17 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base10, empty_expo: false } }, len: 17 }
     Lexeme { type: Whitespace, len: 2 }
-    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 17 }
-    Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base8, empty_expo: false } }, len: 17 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base2, empty_expo: false } }, len: 17 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base10, empty_expo: false } }, len: 18 }
     Lexeme { type: Whitespace, len: 2 }
-    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 16 }
-    Lexeme { type: Minus, len: 1 }
-    Lexeme { type: Literal { type: Integer { base: Base10, empty: false } }, len: 1 }
-    Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base8, empty_expo: false } }, len: 18 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base2, empty_expo: false } }, len: 18 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base10, empty_expo: false } }, len: 18 }
-    Lexeme { type: Whitespace, len: 2 }
-    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 16 }
-    Lexeme { type: Minus, len: 1 }
-    Lexeme { type: Literal { type: Integer { base: Base10, empty: false } }, len: 1 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Literal { type: Float { base: Base8, empty_expo: false } }, len: 18 }
     Lexeme { type: Whitespace, len: 2 }
@@ -104,11 +92,6 @@ fn integers_test() {
     Lexeme { type: Literal { type: Float { base: Base10, empty_expo: false } }, len: 18 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Minus, len: 1 }
-    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 16 }
-    Lexeme { type: Minus, len: 1 }
-    Lexeme { type: Literal { type: Integer { base: Base10, empty: false } }, len: 1 }
-    Lexeme { type: Whitespace, len: 2 }
-    Lexeme { type: Minus, len: 1 }
     Lexeme { type: Literal { type: Float { base: Base8, empty_expo: false } }, len: 18 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Minus, len: 1 }
@@ -116,11 +99,6 @@ fn integers_test() {
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Minus, len: 1 }
     Lexeme { type: Literal { type: Float { base: Base10, empty_expo: false } }, len: 18 }
-    Lexeme { type: Whitespace, len: 2 }
-    Lexeme { type: Minus, len: 1 }
-    Lexeme { type: Literal { type: Integer { base: Base16, empty: false } }, len: 16 }
-    Lexeme { type: Minus, len: 1 }
-    Lexeme { type: Literal { type: Integer { base: Base10, empty: false } }, len: 1 }
     Lexeme { type: Whitespace, len: 2 }
     Lexeme { type: Minus, len: 1 }
     Lexeme { type: Literal { type: Float { base: Base8, empty_expo: false } }, len: 18 }
