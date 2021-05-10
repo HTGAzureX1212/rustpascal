@@ -2,6 +2,8 @@
 //!
 //! An implementation of a lexical analysis for the RustPascal compiler.
 
+#![feature(control_flow_enum)]
+
 use std::iter;
 
 mod cursor;
@@ -299,9 +301,35 @@ impl<'a> cursor::Cursor<'a> {
             _ => {
                 self.eat_decimal_digits();
             }
-        }
+        };
 
-        LiteralType::Integer { base, empty: false }
+        match self.first() {
+            '.' if self.second() != '.' && !self.second().is_id_start() => {
+                self.bump();
+
+                let mut empty_exponent = false;
+                if self.first().is_digit(10) {
+                    self.eat_decimal_digits();
+
+                    match self.first() {
+                        'e' | 'E' => {
+                            self.bump();
+                            empty_exponent = !self.eat_float_exponent();
+                        },
+                        _ => ()
+                    }
+                }
+
+                LiteralType::Float { base, empty_expo: empty_exponent }
+            }
+            'e' | 'E' => {
+                self.bump();
+                let empty_exponent = !self.eat_float_exponent();
+
+                LiteralType::Float { base, empty_expo: empty_exponent }
+            }
+            _ => LiteralType::Integer { base, empty: false }
+        }
     }
 
     fn raw_identifier(&mut self) -> LexemeType {
